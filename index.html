@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Pokemon Criollo</title>
+    <link rel="stylesheet" href="./CCS/Pokemon.css">
+</head>
+<body>
+
+    <section id="seleccionar-mascota">
+        <h1 class="title">¡Pokemon Criollo!</h1>
+
+        <h2 class="subtitle">Elige tu personaje:</h2>
+        
+        <div id="contenedorTarjetas" class="tarjetas">
+        </div>
+
+        <button id="boton-mascota">Seleccionar</button>
+    </section>
+
+    <section id="ver-mapa">
+        <h1 class="title">Recorre el mapa</h1>
+        <canvas id="mapa"></canvas>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverU()">Arriba</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverL()">Izquierda</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverD()">Abajo</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverR()">Derecha</button>
+    </section>
+    
+    <section id="seleccionar-ataque">
+        <h1 class="title">Batalla Criolla!</h1>
+        
+        <div id="personajes" class="personajes">
+        </div>
+
+        <div id="mensajes">
+            <p id="resultado">¡Mucha Suerte!</p>
+            <div class="status">
+                <div class="ataque-jugador">
+                    <p id="ataquesDelJugador">Jugador escogió</p>
+                </div>
+                <div class="ataque-enemigo">
+                    <p id="ataquesDelEnemigo">PC escogió<p>
+                </div>
+            </div>
+
+            <section id="reiniciar">
+                <button class="boton-reiniciar">Revancha</button>
+            </section>
+        </div>
+
+        <div class="vidas">
+            <div>
+                <p id="vidas-jugador" class="display-vidas"></p>
+            </div>
+            <div>
+                <p id="vidas-enemigo" class="display-vidas"></p>
+            </div>
+        </div>
+
+        <h2 class="subtitle">Elige tu ataque:</h2>
+
+        <div id="contenedorAtaques" class="seccion-ataque">
+        </div>
+
+        <div class="reglas">
+            <p>Reglas: <br>Agua 🔪 Fuego <br> Fuego 🔪 Tierra <br> Tierra 🔪 Agua</p>
+        </div>
+
+        <div class="imagen-piePagina">
+            <img class="photo" src="./Assets/FootPhoto.png" alt="Saquela si es de capaz">
+            <h2 class="subtitle">"Saquela si es de capaz"</h2>
+        </div>
+    
+    </section>
+    <script src="./JavaScript/Pokemon.js"></script>
+</body>
+</html>
