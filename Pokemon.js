@@ -11,8 +11,6 @@ const botonReiniciar = document.getElementById('reiniciar')
 const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 const contenedorPersonajes = document.getElementById('personajes')
 const contenedorAtaques = document.getElementById('contenedorAtaques')
-const sectionVerMapa = document.getElementById('ver-mapa')
-const mapa = document.getElementById('mapa')
 
 let mokepones = []
 let opcionDeMokepones;
@@ -44,10 +42,6 @@ let botones = []
 let botonFuego; 
 let botonAgua;
 let botonTierra;
-let lienzo = mapa.getContext("2d")
-let intervalo;
-let mapaBackground = new Image()
-mapaBackground = './Assets/mokemap.png'
 
 // Banco de personajes
 
@@ -146,7 +140,6 @@ function iniciarJuego() {
     })
 
     sectionSeleccionarAtaque.style.display = 'none'
-    sectionVerMapa.style.display = 'none'
     botonReiniciar.style.display = 'none'  
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador) 
     botonReiniciar.addEventListener('click',reiniciarJuego)
