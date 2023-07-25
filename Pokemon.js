@@ -147,10 +147,7 @@ function iniciarJuego() {
 
 function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none' 
-    iniciarMapa()
-
-
-    // sectionSeleccionarAtaque.style.display = 'flex'
+    sectionSeleccionarAtaque.style.display = 'flex'
     
     if (inputleoHerido.checked) {
         spanMascotaJugador = leoHerido.nombre
@@ -349,75 +346,4 @@ function crearMensajeFinal (resultadoFinal){
 
 function reiniciarJuego(){
     location.reload()
-}
-
-function pintarCanvas(){
-    leoHerido.x = leoHerido.x + leoHerido.velocidadX
-    leoHerido.y = leoHerido.y + leoHerido.velocidadY
-    lienzo.clearRect(0,0, mapa.width, mapa.height)
-    lienzo.drawImage(
-        mapaBackground,
-        0,0,
-        mapa.width,
-        mapa.height
-    )
-    lienzo.drawImage(
-        leoHerido.mapaFoto,
-        leoHerido.x,
-        leoHerido.y,
-        leoHerido.width,
-        leoHerido.height
-        )
-}
-
-function moverR(){
-    leoHerido.velocidadX = 5
-}
-
-function moverL(){
-    leoHerido.velocidadX = -5
-}
-
-function moverU(){
-    leoHerido.velocidadY = -5
-}
-
-function moverD(){
-    leoHerido.velocidadY = 5
-}
-
-function detenerMovimiento(){
-    leoHerido.velocidadX = 0
-    leoHerido.velocidadY = 0
-}
-
-function keyDownPressed (event){
-        switch (event.key) {
-            case 'ArrowUp':
-                moverU()
-                break;
-            case 'ArrowDown':
-                moverD()
-                break;
-            case 'ArrowLeft':
-                moverL()
-                break;
-            case 'ArrowRight':
-                moverR()
-                break;
-            default:
-                break;
-        }
-
-}
-
-function iniciarMapa() {
-    mapa.width = 320
-    mapa.height = 240
-
-    sectionVerMapa.style.display = 'flex'
-    intervalo = setInterval(pintarCanvas, 50)
-
-    window.addEventListener('keydown',keyDownPressed)
-    window.addEventListener('keyup', detenerMovimiento)
 }
